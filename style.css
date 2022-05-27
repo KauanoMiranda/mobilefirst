@@ -61,16 +61,13 @@ header h1 {
 }
 
 main {
-  animation: downtop 500ms 350ms backwards;
-  
-}
-
-.wrapper {
   background-color: var(--main-bkg);
   padding: 1.1rem 3.2rem 6rem 3.2rem;
+  display: grid;
+  animation: downtop 500ms 350ms backwards;
 }
 
-.wrapper p {
+p {
   font-family: var(--ff-text);
   font-size: 2rem;
   line-height: 1.5rem;
@@ -89,7 +86,7 @@ main {
 .card img {
   border-radius: 2rem;
   transition-property: transform 250ms;
- 
+  /* width: 32rem; */
 }
 
 img:hover {
@@ -115,7 +112,6 @@ img:hover {
   animation-name: downtop 500ms;
 }
 
-
 .card h2 span {
   border-radius: 2rem;
   background-color: var(--span-color);
@@ -130,7 +126,7 @@ img:hover {
   display: inline-flex;
   align-items: center;
 
-  /* animation-name: topdown 500ms; */
+  animation-name: topdown 500ms;
 }
 
 @keyframes topdown {
@@ -159,12 +155,37 @@ img:hover {
 
 @media (min-width: 700px) {
   .page {
-    max-width: 120rem;
+    max-width: 192rem;
   }
 
   img {
-    width: 60rem;
+    width: 100%;
+    height: auto;
+    padding-right: 2rem;
   }
 
+  .card h2 {
+    top: 3.6rem;
+    right: 3.6rem;
+  }
 
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 930px) {
+
+  .logo {
+    width: 35rem;
+    height: 35rem;
+  }
+
+  card img {
+    object-fit: cover;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
